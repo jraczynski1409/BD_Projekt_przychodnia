@@ -1,0 +1,163 @@
+/*--------------------------1.ADRESY------------------------*/
+create table Adresy (
+    ID_adresu number,
+    Ulica varchar2(48) NOT NULL,
+    Nr_budynku varchar2(6) NOT NULL,
+    Nr_mieszkania varchar2(4),
+    Miasto varchar2(48) NOT NULL,
+    Kod_pocztowy varchar2(6) NOT NULL,
+    Wojewodztwo varchar2(32) NOT NULL,
+    
+    CONSTRAINT adres_pk PRIMARY KEY (ID_adresu)
+);
+
+
+/*---------------2.PPRZYCHODNIE----------------*/
+create table Przychodnie (
+    ID_przychodni numeric,
+    Nazwa varchar2(64) NOT NULL,
+    Nr_telefonu varchar2(12) NOT NULL,
+    ID_adresu numeric NOT NULL,
+    
+    CONSTRAINT przychodnie_pk PRIMARY KEY (ID_przychodni),
+    CONSTRAINT przy_adr_fk FOREIGN KEY (ID_adresu) REFERENCES Adresy(ID_adresu)
+);
+
+
+/*---------------3.OSOBY----------------*/
+create table Osoby (
+    ID_osoby numeric,
+    Imie varchar2(32) NOT NULL,
+    Nazwisko varchar2(32) NOT NULL,
+    Plec varchar2(1) NOT NULL,
+    Nr_telefonu varchar(12),
+    Email varchar2(64) UNIQUE,
+    PESEL varchar2(11) NOT NULL UNIQUE,
+    Data_urodzenia date NOT NULL,
+    ID_adresu numeric NOT NULL,
+    
+    CONSTRAINT CHK_osoby CHECK ((Plec='K' OR PLEC='M') AND (PESEL>9999999999)),
+    
+    CONSTRAINT osoby_pk PRIMARY KEY (ID_osoby),
+    CONSTRAINT osoby_adr_fk FOREIGN KEY (ID_adresu) REFERENCES Adresy(ID_adresu)
+);
+
+
+/*---------------4.PACJENCI----------------*/
+create table Pacjenci (
+    ID_pacjenta numeric,
+    Data_rejestracji date NOT NULL,
+    Ubezpieczenie varchar2(1) NOT NULL,
+    ID_osoby numeric NOT NULL UNIQUE,
+    
+    CONSTRAINT CHK_pacjenci CHECK (Ubezpieczenie='T' OR Ubezpieczenie='N'),
+    
+    CONSTRAINT pacjenci_pk PRIMARY KEY (ID_pacjenta),
+    CONSTRAINT pac_oso_fk FOREIGN KEY (ID_osoby) REFERENCES Osoby(ID_osoby)
+);
+
+
+/*---------------5.Stanowisko----------------*/
+create table Stanowiska (
+    ID_stanowiska numeric,
+    Nazwa varchar2(32) NOT NULL,
+    Opis varchar2(255) NOT NULL,
+    
+    CONSTRAINT Stanowiska_pk PRIMARY KEY (ID_stanowiska)
+);
+
+
+/*---------------6.PRACOWNICY----------------*/
+create table Pracownicy (
+    ID_pracownika numeric,
+    Data_zatrudnienia date NOT NULL,
+    Koniec_umowy date NOT NULL,
+    Pensja numeric(8,2) NOT NULL,
+    ID_stanowiska numeric NOT NULL,
+    ID_osoby numeric NOT NULL UNIQUE,
+    ID_przychodni numeric NOT NULL,
+    
+    CONSTRAINT CHK_pracownicy CHECK (Pensja>3000),
+    
+    CONSTRAINT pracownicy_pk PRIMARY KEY (ID_pracownika),
+    
+    CONSTRAINT pra_sta_fk FOREIGN KEY (ID_stanowiska) REFERENCES Stanowiska(ID_stanowiska),
+    CONSTRAINT pra_oso_fk FOREIGN KEY (ID_osoby) REFERENCES Osoby(ID_osoby),
+    CONSTRAINT pra_prz_fk FOREIGN KEY (ID_przychodni) REFERENCES Przychodnie(ID_przychodni)
+);
+
+/*---------------7.Leki----------------*/
+create table Leki (
+    ID_Leku numeric,
+    Nazwa varchar2(32) NOT NULL UNIQUE,
+    Cena numeric(8,2) NOT NULL,
+    
+    CONSTRAINT Leki_pk PRIMARY KEY (ID_leku)
+);
+
+/*---------------8.Recepty----------------*/
+create table Recepty (
+    ID_recepty numeric,
+    Kod varchar2(32) NOT NULL UNIQUE,
+    Erecepta varchar2(1) NOT NULL,
+    Data_waznosci date NOT NULL,
+    
+    CONSTRAINT Recepty_pk PRIMARY KEY (ID_recepty)
+);
+
+/*---------------9.Leki_na_RECEPCIE----------------*/
+create table Leki_na_recepcie (
+    ID_lnr numeric,
+    ID_recepty numeric not null,
+    ID_leku numeric not null,
+    Refundacja numeric not null,
+    
+    CONSTRAINT CHK_LnR CHECK ((Refundacja=0) OR (Refundacja>0 and Refundacja<100) OR (Refundacja=100)),
+    
+    CONSTRAINT LnR_pk PRIMARY KEY (ID_lnr),
+    
+    CONSTRAINT lnr_rec_fk FOREIGN KEY (ID_recepty) REFERENCES Recepty(ID_recepty),
+    CONSTRAINT lnr_lek_fk FOREIGN KEY (ID_leku) REFERENCES Leki(ID_leku)
+);
+
+
+/*---------------10.Choroby----------------*/
+create table Choroby (
+    ID_choroby numeric,
+    Nazwa varchar2(64) not null unique,
+    Typ varchar2(16) not null,
+    Opis varchar2(255),
+    
+    CONSTRAINT Choroba_pk PRIMARY KEY (ID_choroby)
+);
+
+/*---------------11.BADANIA----------------*/
+create table Badania (
+    ID_badania numeric,
+    Koszt numeric(9,2),
+    Opis varchar2(255),
+    ID_pacjenta numeric not null,
+    ID_pracownika numeric not null,
+    ID_recepty numeric,
+    
+    CONSTRAINT badanie_pk PRIMARY KEY (ID_Badania),
+    
+    CONSTRAINT bad_pac_fk FOREIGN KEY (ID_pacjenta) REFERENCES pacjenci(ID_pacjenta),
+    CONSTRAINT bad_pra_fk FOREIGN KEY (ID_pracownika) REFERENCES Pracownicy(ID_pracownika),
+    CONSTRAINT bad_rec_fk FOREIGN KEY (ID_recepty) REFERENCES Recepty(ID_recepty)
+);
+
+
+/*---------------12.CHOROBY_NA_BADANIU----------------*/
+create table cnb (
+    ID_cnb numeric,
+    ID_badania numeric not null,
+    ID_choroby numeric not null,
+    
+    CONSTRAINT cnb_pk PRIMARY KEY (ID_cnb),
+    
+    constraint cnb_chor_fk FOREIGN KEY (ID_choroby) references choroby(ID_choroby),
+    constraint cnb_bad_fk FOREIGN KEY (ID_badania) references Badania(ID_Badania)
+);
+
+drop table cnb;
