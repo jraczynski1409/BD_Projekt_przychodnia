@@ -1,0 +1,18 @@
+
+INSERT INTO leki values (1, 'Rutinoscorbin', 10.59);
+INSERT INTO leki values (2, 'Ascorlamid', 20.99);
+INSERT INTO leki values (3, 'Witamina C 1000', 15.99);
+INSERT INTO leki values (4, 'BabyBoom', 9.99);
+INSERT INTO leki values (5, 'Vigantoletten 1000', 20.99);
+INSERT INTO leki values (6, 'Ketonal', 25.89);
+INSERT INTO leki values (7, 'Theraflu', 18.99);
+INSERT INTO leki values (8, 'Amol', 32.99);
+INSERT INTO leki values (9, 'Apap', 21.99);
+INSERT INTO leki values (10, 'Multilac', 18.59);
+INSERT INTO leki values (11, 'Xylometazolin', 7.99);
+INSERT INTO leki values (12, 'Otrivin', 20.49);
+INSERT INTO leki values (13, 'Nasic', 16.49);
+INSERT INTO leki values (14, 'Allegra', 11.59);
+INSERT INTO leki values (15, 'Sudafet', 17.89);
+
+select  from leki

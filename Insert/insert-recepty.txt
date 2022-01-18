@@ -1,0 +1,19 @@
+
+INSERT INTO recepty values (1, 'fawe23tser4w3dsafg4q', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (2, 'gshyku75232341rdfa32', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (3, 'gasfcqw343wasfceas3r', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (4, '4gfdh6usdf3asdfg342g', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (5, 'asd3fzve3qwdzfzdfwe2', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (6, 'gsdf3qwdasdzwd2qad3a', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (7, 'fawed2qgsdf3f54fsdfe', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (8, 'fbw4aw43rvw3avefaw3r', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (9, 'vaw3rvdefaw3rvvadefr', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (10, 'vaw3rvasefzawrwarfwa', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (11, 'avw3rvasdfwrfwefawvr', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (12, 'tvuyd5tvawerffsafwdf', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (13, 'asdfvawervwsdfgrvhdn', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (14, 'vaw23ts5ytvse4va32r2', 'T', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+INSERT INTO recepty values (15, '123rsafwr23revsdrt3w', 'N', (SELECT sysdate + round(dbms_random.value(30,60)) as "data" from dual));
+
+
+select * from recepty

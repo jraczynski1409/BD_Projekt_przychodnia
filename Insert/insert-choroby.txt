@@ -1,0 +1,17 @@
+Insert into choroby values (1,'Przeziebienie', 'Wirusowa', 'kaszel, katar');
+Insert into choroby values (2,'Grypa', 'Wirusowa', 'Gorączka, kaszel, złe samopoczucie, ból mięśniowo-szkieletowy');
+Insert into choroby values (3,'Covid-19', 'Wirusowa', 'Gorączka, kaszel, katar, brak wechu i smaku');
+Insert into choroby values (4,'Ospa wietrzna', 'Wirusowa', 'krosty na całym ciele');
+Insert into choroby values (5,'Świnka', 'Wirusowa', 'Powiekszenie slinianek przyusznych');
+Insert into choroby values (6,'Różyczka', 'Wirusowa', 'Wysypka, powiekszenie wezlów chłonnych');
+Insert into choroby values (7,'Cukrzyca', 'Metaboliczna', 'Nietolerancja cukru');
+Insert into choroby values (8,'Zapalenie płuc', 'Wirusowa', 'Infekcja płuc');
+Insert into choroby values (9,'Arytmia', 'Zaburzenia', 'Nie regularne bicie serca');
+Insert into choroby values (10,'Nadczynność tarczycy', 'Metaboliczna', 'Ciagłe zapalenie tarczycy');
+Insert into choroby values (11,'Zapalenie ucha', 'Bakteryjne', 'Silny ból ucha');
+Insert into choroby values (12,'Zapalenie zatok', 'Bakteryjna', 'Silny katar i ucisk w zatokach');
+Insert into choroby values (13,'Złamana kończyna', 'Uraz', 'Złamanie kończyny');
+Insert into choroby values (14,'Kamienie nerkowe', 'Metaboliczna', 'Kolka nerwowa');
+Insert into choroby values (15,'Trądzik', 'Bakteryjna', 'Krosty i ropnie na skórze');
+
+select * from choroby
