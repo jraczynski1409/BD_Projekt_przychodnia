@@ -1,0 +1,18 @@
+/*---------------------------------------------Historia_chorob------------------------------------*/
+create or replace view choroby_pacjentow as
+select badania.id_badania, pacjenci.id_pacjenta, osoby.imie, osoby.nazwisko, osoby.pesel, choroby.nazwa, choroby.typ, choroby.opis 
+from osoby,pacjenci,badania,cnb,choroby
+where osoby.id_osoby=pacjenci.id_osoby and pacjenci.id_pacjenta=badania.id_pacjenta and badania.id_badania=cnb.id_badania and cnb.id_choroby=choroby.id_choroby
+order by badania.id_badania asc;
+
+select * from choroby_pacjentow;
+
+
+/*---------------------------------------------Lista_covid------------------------------------*/
+create or replace view lista_covid as
+select badania.id_badania, pacjenci.id_pacjenta, osoby.imie, osoby.nazwisko, osoby.pesel, choroby.nazwa, adresy.miasto, adresy.ulica, adresy.nr_budynku, adresy.nr_mieszkania
+from osoby,pacjenci,badania,cnb,choroby,adresy
+where osoby.id_osoby=pacjenci.id_osoby and pacjenci.id_pacjenta=badania.id_pacjenta and badania.id_badania=cnb.id_badania and cnb.id_choroby=choroby.id_choroby and osoby.id_adresu=adresy.id_adresu and choroby.nazwa='Covid-19'
+order by badania.id_badania asc;
+
+select * from lista_covid;
