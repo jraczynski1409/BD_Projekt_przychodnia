@@ -1,0 +1,3 @@
+INSERT INTO Przychodnie VALUES (1,'Przychodnia Ratmedik w Kielcach nr.1','681793455',5);
+INSERT INTO Przychodnie VALUES (2,'Przychodnia Ratmedik w Niestachowie','681793456',13);
+INSERT INTO Przychodnie VALUES (3,'SOR Ratmedik','681793998',9);

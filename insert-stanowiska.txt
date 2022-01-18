@@ -1,0 +1,15 @@
+INSERT INTO stanowiska VALUES (1, 'Pediatra', 'Lekarz zajmujący się leczeniem dzieci.');
+INSERT INTO stanowiska VALUES (2, 'Pielegniarka', 'Osoba asystująca lekarzą. Wykonuje takie obowiązki jak pobranie krwi i tym podobne.');
+INSERT INTO stanowiska VALUES (3, 'Chirurg', 'Lekarz który wykonuje oprecaje i zabegi na niemal wszystkich elementach ciała człowieka.');
+INSERT INTO stanowiska VALUES (4, 'Dermatolog', 'Lekarz zajmujący się chorobami skóry.');
+INSERT INTO stanowiska VALUES (5, 'Endokrynolog', 'Lekarz zajmujący się chorobami tarczycy.');
+INSERT INTO stanowiska VALUES (6, 'Kardiolog', 'Lekarz zajmujący się chorobami serca.');
+INSERT INTO stanowiska VALUES (7, 'Lekarz medycyny pracy', 'Lekarz zajmujący się podbijaniem ksiązeczki xD.');
+INSERT INTO stanowiska VALUES (8, 'Neurolog', 'Lekarz zajmujący się chorobami kręgosłupa oraz układu nerwowego.');
+INSERT INTO stanowiska VALUES (9, 'Okulista', 'Lekarz zajmujący się chorobami oczu.');
+INSERT INTO stanowiska VALUES (10, 'Stomatolog', 'Lekarz badający uzębienie lub jego brak xD.');
+INSERT INTO stanowiska VALUES (11, 'Psychiatra', 'Lekarz zajmujący się chorobami psychicznymi.');
+INSERT INTO stanowiska VALUES (12, 'Laboratorant', 'Osoba badająca różne próbki które zostały zlecone przez lekarza.');
+INSERT INTO stanowiska VALUES (13, 'Ginekolog', 'Osoba badająca brzuszek i to co sie w nim znajduje.');
+INSERT INTO stanowiska VALUES (14, 'Dietetyk', 'Układanie diet i porady żywieniowe');
+INSERT INTO stanowiska VALUES (15, 'Ortopeda', 'Lekarz zajmujący sie patologiami układu kostnego.');

@@ -1,0 +1,15 @@
+INSERT INTO Adresy VALUES (1,'Równa','12a','32','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (2,'Wspólna','15','1','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (3,'Złota','25','11','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (4,'Śniadeckich','22/24','10','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (5,'Paderewskiego','11','48','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (6,'Olszewskiego','3b','12','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (7,'Nowaka-Jeziorańskiego','55','30','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (8,'Nowaka-Jeziorańskiego','55','29','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (9,'Grunwaldzka','5','3','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (10,'Jagielońska','41','8','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (11,'Szajnowicza-Iwanowa','13a','22','Kielce','25-001','Świetokrzyskie');
+INSERT INTO Adresy VALUES (12,'Niestachów','100',NULL,'Daleszyce','26-021','Świetokrzyskie');
+INSERT INTO Adresy VALUES (13,'Niestachów','188',NULL,'Daleszyce','26-021','Świetokrzyskie');
+INSERT INTO Adresy VALUES (14,'Wola Jachowa','100',NULL,'Górno','26-008','Świetokrzyskie');
+INSERT INTO Adresy VALUES (15,'Przemysłowa','100',NULL,'Przysucha','26-400','Mazowieckie');
