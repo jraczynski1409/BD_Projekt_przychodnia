@@ -1,0 +1,64 @@
+/*---------Informacje_o_pacjentach------------*/
+create or replace view informacje_o_pacjentach as 
+select  
+    pacjenci.id_pacjenta, 
+    osoby.imie, 
+    osoby.nazwisko, 
+    osoby.data_urodzenia, 
+    osoby.pesel, 
+    osoby.plec, 
+    adresy.miasto, 
+    adresy.ulica, 
+    adresy.nr_budynku, 
+    adresy.nr_mieszkania, 
+    pacjenci.data_rejestracji, 
+    pacjenci.ubezpieczenie 
+from 
+    pacjenci, 
+    osoby, 
+    adresy 
+where 
+    pacjenci.id_osoby=osoby.id_osoby and 
+    osoby.id_adresu = adresy.id_adresu 
+order by 
+    id_pacjenta 
+    asc
+
+
+
+/*---------Informacje_o_pracownikach------------*/
+create or replace view informacje_o_pracownikach as
+select 
+    pracownicy.id_pracownika,
+    osoby.imie,
+    osoby.nazwisko,
+    osoby.data_urodzenia,
+    osoby.pesel,
+    osoby.plec,
+    adresy.miasto,
+    adresy.ulica,
+    adresy.nr_budynku,
+    adresy.nr_mieszkania,
+    pracownicy.data_zatrudnienia,
+    pracownicy.koniec_umowy,
+    (select pracownicy.koniec_umowy-pracownicy.data_zatrudnienia from dual) as przepracowane_dni,
+    pracownicy.pensja,
+    stanowiska.nazwa as stanowisko,
+    przychodnie.nazwa as przychodnia
+    
+from
+    pracownicy,
+    osoby,
+    adresy,
+    stanowiska,
+    przychodnie
+where
+    pracownicy.id_osoby=osoby.id_osoby and 
+    osoby.id_adresu=adresy.id_adresu and
+    pracownicy.id_stanowiska=stanowiska.id_stanowiska and
+    przychodnie.id_przychodni=pracownicy.id_przychodni
+order by
+    id_Pracownika
+    asc;
+    
+select * from informacje_o_pracownikach;
