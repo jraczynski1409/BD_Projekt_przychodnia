@@ -35,8 +35,10 @@ create table Osoby (
     PESEL varchar2(11) NOT NULL UNIQUE,
     Data_urodzenia date NOT NULL,
     ID_adresu numeric NOT NULL,
+    Login varchar2(64) NOT NULL UNIQUE,
+    Haslo varchar2(64) NOT NULL,
     
-    CONSTRAINT CHK_osoby CHECK ((Plec='K' OR PLEC='M') AND (PESEL>9999999999)),
+    CONSTRAINT CHK_osoby CHECK ((Plec='K' OR PLEC='M')),
     
     CONSTRAINT osoby_pk PRIMARY KEY (ID_osoby),
     CONSTRAINT osoby_adr_fk FOREIGN KEY (ID_adresu) REFERENCES Adresy(ID_adresu)
@@ -57,7 +59,7 @@ create table Pacjenci (
 );
 
 
-/*---------------5.Stanowisko----------------*/
+/*---------------5.Stanowisko-----------sle-----*/
 create table Stanowiska (
     ID_stanowiska numeric,
     Nazwa varchar2(32) NOT NULL,
@@ -160,4 +162,3 @@ create table cnb (
     constraint cnb_bad_fk FOREIGN KEY (ID_badania) references Badania(ID_Badania)
 );
 
-drop table cnb;
