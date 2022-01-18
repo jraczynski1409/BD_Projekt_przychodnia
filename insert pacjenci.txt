@@ -1,0 +1,17 @@
+INSERT INTO pacjenci VALUES (1,(SELECT sysdate - round(dbms_random.value(10,20)) as "data" from dual),'T',1);
+INSERT INTO pacjenci VALUES (2,(SELECT sysdate - round(dbms_random.value(10,20)) as "data" from dual),'T',2);
+INSERT INTO pacjenci VALUES (3,(SELECT sysdate - round(dbms_random.value(10,20)) as "data" from dual),'T',3);
+INSERT INTO pacjenci VALUES (4,(SELECT sysdate - round(dbms_random.value(11,15)) as "data" from dual),'T',4);
+INSERT INTO pacjenci VALUES (5,(SELECT sysdate - round(dbms_random.value(11,15)) as "data" from dual),'T',5);
+INSERT INTO pacjenci VALUES (6,(SELECT sysdate - round(dbms_random.value(16,18)) as "data" from dual),'T',6);
+INSERT INTO pacjenci VALUES (7,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'N',7);
+INSERT INTO pacjenci VALUES (8,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'T',8);
+INSERT INTO pacjenci VALUES (9,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'T',9);
+INSERT INTO pacjenci VALUES (10,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'T',10);
+INSERT INTO pacjenci VALUES (11,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'N',11);
+INSERT INTO pacjenci VALUES (12,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'T',12);
+INSERT INTO pacjenci VALUES (13,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'T',13);
+INSERT INTO pacjenci VALUES (14,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'N',14);
+INSERT INTO pacjenci VALUES (15,(SELECT sysdate - round(dbms_random.value(1,10)) as "data" from dual),'T',15);
+
+select * from pacjenci;

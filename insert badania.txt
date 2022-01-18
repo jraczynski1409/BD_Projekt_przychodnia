@@ -1,0 +1,19 @@
+INSERT INTO badania values (1,0,'Wizyta kontrolna. Kaszel i wymioty',11,3,1);
+INSERT INTO badania values (2,300,'Badanie krwi',9,2,2);
+INSERT INTO badania values (3,150,'Badanie krwi i moczu',8,2,3);
+INSERT INTO badania values (4,200,'Echo serca',10,4,4);
+INSERT INTO badania values (5,0,'Badanie wzroku',6,9,5);
+INSERT INTO badania values (6,50,'Przeciecie ropnia',8,1,6);
+INSERT INTO badania values (7,500,'Rezonans',5,7,7);
+INSERT INTO badania values (8,25,'Badanie krwi i moczu',7,2,8);
+INSERT INTO badania values (9,100,'Badanie kału',15,2,9);
+INSERT INTO badania values (10,40,'Wizyta u dermatologa',14,6,10);
+INSERT INTO badania values (11,89,'Wizyta kontrolna',8,3,11);
+INSERT INTO badania values (12,100,'Badanie serca',9,4,12);
+INSERT INTO badania values (13,0,'Badanie próbek',2,12,13);
+INSERT INTO badania values (14,0,'Leczenie zebów',3,12,14);
+INSERT INTO badania values (15,250,'Wyrywanie zeba nr.1',1,12,15);
+
+
+
+select * from badania;

@@ -1,0 +1,18 @@
+INSERT INTO Osoby VALUES (1, 'Jakub', 'Raczynski','M','888137582','jakubraczynski@gmail.com','99325489633',to_date('14/09/2000','DD/MM/YYYY'),12,'kuba','mocnehaslo');
+INSERT INTO Osoby VALUES (2, 'Robert', 'Kaleta','M','245758222','robertkaleta@gmail.com','99359764821',to_date('13/12/2000','DD/MM/YYYY'),14,'robson','mocnniejszehaslo');
+INSERT INTO Osoby VALUES (3, 'Bartłomiej', 'Palus','M','968247361','bartlomiejpalus@gmail.com','95637845214',to_date('21/10/2000','DD/MM/YYYY'),15,'bartek','najmocnniejszehaslo');
+INSERT INTO Osoby VALUES (4, 'Krzysztof', 'Krawczyk','M','786428392','parostatek@wrejs.com','55978641385',to_date('14/12/1955','DD/MM/YYYY'),1,'krawczyk','stateknapare');
+INSERT INTO Osoby VALUES (5, 'Maryla', 'Rodowicz','K','758963214','mlodaja@podajtlen.com','11015699987',to_date('02/04/1911','DD/MM/YYYY'),11,'wieczniemloda','kolorowejarmarki');
+INSERT INTO Osoby VALUES (6, 'Krzysztof', 'Ibisz','M','789632541','ibisz@poltas.com','12889557487',to_date('30/07/1912','DD/MM/YYYY'),2,'ibisz','botox123');
+INSERT INTO Osoby VALUES (7, 'Maria', 'Skłodowska','K','129875641','rad@rad.com','88669452473',to_date('07/11/1988','DD/MM/YYYY'),10,'maria','ur@dowana1');
+INSERT INTO Osoby VALUES (8, 'Bolesław', 'Chrobry','M','976348615','kocham@drewno.com','12397684521',to_date('10/02/1954','DD/MM/YYYY'),7,'bolek','mieszko');
+INSERT INTO Osoby VALUES (9, 'Kazimierz', 'Wielki','M','752465789','kocham@mury.com','76814129763',to_date('28/03/1928','DD/MM/YYYY'),8,'murbeton','piedziesiatzlotych');
+INSERT INTO Osoby VALUES (10, 'Janina', 'Nowak','K','793684256','chytra@baba.com','78954128876',to_date('10/08/1992','DD/MM/YYYY'),4,'janinkack','brajanek');
+INSERT INTO Osoby VALUES (11, 'Brajan', 'Nowak','M','188246875','brajanek@gmail.com','18187898788',to_date('01/09/2018','DD/MM/YYYY'),4,'brajannowak','piec100dodac');
+INSERT INTO Osoby VALUES (12, 'Jessika', 'Nowak','K','188246866','dzesikan@gmail.com','18187898777',to_date('01/09/2018','DD/MM/YYYY'),4,'jlonowak','piec100dodacrazy2');
+INSERT INTO Osoby VALUES (13, 'Witold', 'Kowalski','M','889768852','wk@gmail.com','79684523879',to_date('01/01/1978','DD/MM/YYYY'),6,'witek12','mariola');
+INSERT INTO Osoby VALUES (14, 'Mariola', 'Kowalska','K','889768853','mk@gmail.com','78469381752',to_date('16/05/1978','DD/MM/YYYY'),5,'mariola69','witold');
+INSERT INTO Osoby VALUES (15, 'Hanna', 'Mostowiak','K','789684253','hannam@carton.com','70897878652',to_date('16/09/1970','DD/MM/YYYY'),3,'hannka','mareczek');
+
+
+select * from osoby;

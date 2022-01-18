@@ -1,0 +1,15 @@
+INSERT INTO pracownicy values (1, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 5300, 3, 1, 1);
+INSERT INTO pracownicy values (2, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 3100, 2, 2, 2);
+INSERT INTO pracownicy values (3, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 4500, 1, 3, 3);
+INSERT INTO pracownicy values (4, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 5600, 6, 4, 1);
+INSERT INTO pracownicy values (5, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 5600, 5, 5, 2);
+INSERT INTO pracownicy values (6, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 3900, 4, 6, 3);
+INSERT INTO pracownicy values (7, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 5800, 8, 7, 1);
+INSERT INTO pracownicy values (8, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 4000, 7, 8, 2);
+INSERT INTO pracownicy values (9, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 3900, 9, 9, 3);
+INSERT INTO pracownicy values (10, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 4600, 15, 10, 3);
+INSERT INTO pracownicy values (11, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 6000, 13, 11, 1);
+INSERT INTO pracownicy values (12, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 3300, 12, 12, 2);
+INSERT INTO pracownicy values (15, (SELECT sysdate - round(dbms_random.value(20,25)) as "data" from dual), (SELECT sysdate + round(dbms_random.value(50,100)) as "data" from dual) , 4900, 10, 15, 3);
+
+select * from pracownicy;
