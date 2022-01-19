@@ -1,0 +1,20 @@
+select * from pracownicy;
+
+CREATE OR REPLACE PROCEDURE premia (pre numeric, pracownik numeric)
+IS
+CURSOR cur_pre IS
+	select id_pracownika,koniec_umowy,pensja from pracownicy where id_pracownika=pracownik;
+    
+tmp cur_pre%rowtype;
+begin 
+open cur_pre;
+    Fetch cur_pre INTO tmp;
+    Update pracownicy set pracownicy.pensja=pracownicy.pensja+pre where id_pracownika=tmp.id_pracownika;
+    
+close cur_pre;
+end;
+/
+
+exec premia(2000,5);
+
+select * from pracownicy;

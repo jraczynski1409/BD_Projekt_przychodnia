@@ -1,0 +1,19 @@
+select * from pracownicy;
+
+create or replace procedure przedluzanie_umowy (dldni date, idprac numeric) is
+cursor cur_pu is
+    select id_pracownika,koniec_umowy from pracownicy where id_pracownika=idprac;
+
+tmp cur_pu%rowtype;
+
+begin 
+open cur_pu;
+    fetch cur_pu into tmp;
+    update pracownicy set pracownicy.koniec_umowy=dldni where pracownicy.id_pracownika=tmp.id_pracownika;
+close cur_pu;
+end;
+/
+
+exec przedluzanie_umowy(to_date('15/02/2023' ,'dd/mm/yyyy'),5);
+
+select * from pracownicy;
