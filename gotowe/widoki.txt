@@ -1,0 +1,101 @@
+/*---------Informacje_o_pacjentach------------*/
+create or replace view informacje_o_pacjentach as 
+select  
+    pacjenci.id_pacjenta, 
+    osoby.imie, 
+    osoby.nazwisko, 
+    osoby.data_urodzenia, 
+    osoby.pesel, 
+    osoby.plec, 
+    adresy.miasto, 
+    adresy.ulica, 
+    adresy.nr_budynku, 
+    adresy.nr_mieszkania, 
+    pacjenci.data_rejestracji, 
+    pacjenci.ubezpieczenie 
+from 
+    pacjenci, 
+    osoby, 
+    adresy 
+where 
+    pacjenci.id_osoby=osoby.id_osoby and 
+    osoby.id_adresu = adresy.id_adresu 
+order by 
+    id_pacjenta 
+    asc
+
+
+
+/*---------Informacje_o_pracownikach------------*/
+create or replace view informacje_o_pracownikach as
+select 
+    pracownicy.id_pracownika,
+    osoby.imie,
+    osoby.nazwisko,
+    osoby.data_urodzenia,
+    osoby.pesel,
+    osoby.plec,
+    adresy.miasto,
+    adresy.ulica,
+    adresy.nr_budynku,
+    adresy.nr_mieszkania,
+    pracownicy.data_zatrudnienia,
+    pracownicy.koniec_umowy,
+    (select pracownicy.koniec_umowy-pracownicy.data_zatrudnienia from dual) as przepracowane_dni,
+    pracownicy.pensja,
+    stanowiska.nazwa as stanowisko,
+    przychodnie.nazwa as przychodnia
+    
+from
+    pracownicy,
+    osoby,
+    adresy,
+    stanowiska,
+    przychodnie
+where
+    pracownicy.id_osoby=osoby.id_osoby and 
+    osoby.id_adresu=adresy.id_adresu and
+    pracownicy.id_stanowiska=stanowiska.id_stanowiska and
+    przychodnie.id_przychodni=pracownicy.id_przychodni
+order by
+    id_Pracownika
+    asc;
+    
+select * from informacje_o_pracownikach;
+
+/*---------------------------------------------Liczenie kosztów------------------------------------*/
+create or replace view dochod_z_badan as
+
+    select count(id_badania)as ilosc_badan, sum(koszt) as suma from badania; 
+
+select * from dochod_z_badan
+    
+
+/*---------------------------------------------Wystawione_leki------------------------------------*/
+create or replace view wypisane_leki as
+    select badania.id_badania,osoby.pesel, recepty.kod, leki.nazwa, leki_na_recepcie.refundacja
+    from badania,recepty,leki,leki_na_recepcie,osoby,pacjenci
+    where badania.id_recepty=recepty.id_recepty and recepty.id_recepty=leki_na_recepcie.id_recepty and leki_na_recepcie.id_leku=leki.id_leku and osoby.id_osoby=pacjenci.id_osoby and pacjenci.id_pacjenta=badania.id_pacjenta
+    order by badania.id_badania asc;
+    
+select * from wypisane_leki;
+
+
+/*---------------------------------------------Historia_chorob------------------------------------*/
+create or replace view choroby_pacjentow as
+select badania.id_badania, pacjenci.id_pacjenta, osoby.imie, osoby.nazwisko, osoby.pesel, choroby.nazwa, choroby.typ, choroby.opis 
+from osoby,pacjenci,badania,cnb,choroby
+where osoby.id_osoby=pacjenci.id_osoby and pacjenci.id_pacjenta=badania.id_pacjenta and badania.id_badania=cnb.id_badania and cnb.id_choroby=choroby.id_choroby
+order by badania.id_badania asc;
+
+select * from choroby_pacjentow;
+
+
+/*---------------------------------------------Lista_covid------------------------------------*/
+create or replace view lista_covid as
+select badania.id_badania, pacjenci.id_pacjenta, osoby.imie, osoby.nazwisko, osoby.pesel, choroby.nazwa, adresy.miasto, adresy.ulica, adresy.nr_budynku, adresy.nr_mieszkania
+from osoby,pacjenci,badania,cnb,choroby,adresy
+where osoby.id_osoby=pacjenci.id_osoby and pacjenci.id_pacjenta=badania.id_pacjenta and badania.id_badania=cnb.id_badania and cnb.id_choroby=choroby.id_choroby and osoby.id_adresu=adresy.id_adresu and choroby.nazwa='Covid-19'
+order by badania.id_badania asc;
+
+select * from lista_covid;
