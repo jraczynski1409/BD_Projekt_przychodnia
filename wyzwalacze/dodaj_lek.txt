@@ -1,0 +1,18 @@
+create sequence seq_lek
+start with 16
+increment by 1;
+
+select * from leki_widok;
+
+CREATE OR REPLACE TRIGGER dodaj_lek
+INSTEAD OF INSERT ON leki_widok FOR EACH ROW
+BEGIN
+	INSERT INTO leki VALUES(seq_lek.nextval, :NEW.nazwa, :NEW.cena);
+END;
+/
+
+INSERT INTO leki_widok VALUES('Gripex',10.99);
+
+SELECT * FROM leki_widok;
+SELECT * FROM leki;
+
