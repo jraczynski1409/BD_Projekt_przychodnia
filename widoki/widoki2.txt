@@ -1,0 +1,16 @@
+/*---------------------------------------------Liczenie kosztów------------------------------------*/
+create or replace view dochod_z_badan as
+
+    select count(id_badania)as ilosc_badan, sum(koszt) as suma from badania; 
+
+select * from dochod_z_badan
+    
+
+/*---------------------------------------------Wystawione_leki------------------------------------*/
+create or replace view wypisane_leki as
+    select badania.id_badania,osoby.pesel, recepty.kod, leki.nazwa, leki_na_recepcie.refundacja
+    from badania,recepty,leki,leki_na_recepcie,osoby,pacjenci
+    where badania.id_recepty=recepty.id_recepty and recepty.id_recepty=leki_na_recepcie.id_recepty and leki_na_recepcie.id_leku=leki.id_leku and osoby.id_osoby=pacjenci.id_osoby and pacjenci.id_pacjenta=badania.id_pacjenta
+    order by badania.id_badania asc;
+    
+select * from wypisane_leki;
