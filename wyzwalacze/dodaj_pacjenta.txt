@@ -1,0 +1,13 @@
+create sequence seq_osoby
+start with 16
+increment by 1;
+
+CREATE OR REPLACE TRIGGER dodaj_osobe 
+INSTEAD OF INSERT ON osoba_widok FOR EACH ROW 
+BEGIN 
+	INSERT INTO osoby VALUES(seq_osoby.nextval, :NEW.Imie, :NEW.Nazwisko, :NEW.Plec, :NEW.NR_telefonu, :NEW.EMAIL, :NEW.PESEL, :NEW.DATA_URODZENIA, :NEW.ID_ADRESU, :NEW.LOGIN, :NEW.HASLO); 
+END; 
+/
+INSERT INTO osoba_widok VALUES('Jan','Kowalski','M','423567543','jankowalski@polak.pl','12345678901',to_date('10/10/2021','DD/MM/YYYY'),5,'jan','kowalski1');
+
+select * from osoby;
