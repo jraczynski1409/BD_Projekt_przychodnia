@@ -1,0 +1,213 @@
+body{
+    background-color: #111;
+    color:#dddd85;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+#logowanie
+{
+    display: block;
+    width: 320px;
+    height: 453px;
+    background-color: #333;
+    position: fixed;
+    top: 50vh;
+    left:50%;
+    margin-left: -140px;
+    margin-top:-226px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 8px #dddd85);
+    text-align: center;
+    
+    
+    
+}
+
+.log
+{
+    display: block;
+    width: 240px;
+    height: 30px;
+    padding:5px 10px;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 16px;
+    border:2px solid #dddd85;
+    border-radius: 30px;
+    
+}
+
+.submit
+{
+   display: block;
+    width: 150px;
+    height: 30px;
+    padding:5px 10px;
+    margin: auto;
+    margin-top: 40px;
+    font-size: 12px;
+    background-color:  #dddd85;
+    border:2px solid #dddd85;
+    border-radius: 30px;
+}
+.submit:hover
+{
+    background-color:#999935;
+    transition-duration: 0.2s;
+    cursor:pointer;
+}
+
+.ods
+{
+    color: #bbbbbb;
+    text-decoration: none;
+    
+}
+
+.ods:hover
+{
+    color: #999999;
+    text-decoration: none;
+    
+}
+
+#menu
+{
+    width: 280px;
+    height: 100vh;
+    background-color:#222;
+    color:#dddd85; 
+    text-align: center;
+    float: left;
+}
+
+.menu_ods
+{
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    background-color: #111;
+    text-decoration: none;
+    line-height: 40px;
+    color:#ccc;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.menu_ods:hover
+{
+    background-color: #181818;
+    color:#dddd85;
+    transition-duration: 0.2s;
+    
+}
+
+.odstep3
+{
+    margin-top:15px;
+}
+
+.odstep2
+{
+    margin-top:10px;
+}
+
+.odstep1
+{
+    margin-top:3px;
+}
+
+.userinfo
+{
+    display: block; width: 80%;height: 50px;border: 2px solid #eee; background-color: #111;color: #ddd;
+}
+
+footer
+{
+    position: absolute;
+    bottom:0px;
+    display: block;
+    width:280px;
+    height: 35px;
+    margin-top: -35px;
+    background-color:#383838;
+    font-size: 14px;
+    line-height:15px;
+    padding-top: 5px;
+    border-top:2px solid #dddd85;
+    
+}
+
+footer a
+{
+    color: #ddd;
+}
+
+#con{
+    position: static;
+    top: 0;
+    margin-left: 300px;
+    
+    
+}
+
+.naglowek_tabeli
+{
+    font-weight: 900;
+    background-color: #555;
+    color:#ddd;
+    
+}
+
+.tabela{
+    border: 1px solid #ddd;
+    text-align: center;
+    
+}
+
+.tabela tr{
+    
+}
+
+.tabela td{
+    padding: 8px 6px;
+}
+h2
+{
+    margin: 10px;
+}
+
+.formularz
+{
+    background-color: #181818;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.formularz input
+{
+    padding: 3px;
+    margin: 3px;
+    height: 20px;
+    padding: 5px;
+    font-size: 16px;
+    border: 3px solid #dddd85;
+    border-radius: 30px;
+    
+}
+
+
+h1
+{
+    margin-top:0;
+}
+
+#input_dodaj
+{
+    width: 150px;
+    height: 40px;
+    background-color: #868686;
+}
+
