@@ -1,0 +1,17 @@
+CREATE OR REPLACE PROCEDURE podwyzka (procent numeric, pracownik numeric)
+IS
+CURSOR cur_pod IS
+	select id_pracownika,koniec_umowy,pensja from pracownicy where id_pracownika=pracownik;
+    
+pen numeric := 0;
+tmp cur_pod%rowtype;
+begin 
+open cur_pod;
+    Fetch cur_pod INTO tmp;
+    pen := tmp.pensja;
+    Update pracownicy set pracownicy.pensja=pen*((100+procent)/100) where id_pracownika=tmp.id_pracownika;
+    
+close cur_pod;
+end;
+/
+

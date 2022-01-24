@@ -1,0 +1,21 @@
+select * from leki;
+
+CREATE OR REPLACE PROCEDURE zw_cene_leku (nowacena numeric, idlek numeric)
+IS
+CURSOR cur_zcl IS
+	select * from leki where id_leku=idlek;
+    
+cen numeric := 0;
+tmp cur_zcl%rowtype;
+begin 
+open cur_zcl;
+    Fetch cur_zcl INTO tmp;
+    cen := tmp.cena;
+    Update leki set leki.cena=nowacena where id_leku=tmp.id_leku;
+close cur_zcl;
+end;
+/
+
+exec zw_cene_leku(7.99 ,1);
+
+select * from leki;
